@@ -351,6 +351,7 @@ return [
                 'adjustment-refund'           => 'අභ්‍යාවශ්‍ය ආදානය',
                 'amount-per-unit'             => ':amount ප්රමාණය අනු :qty ප්‍රමාණයක්',
                 'create-success'              => 'ආදානය සාර්ථකයි',
+                'creation-error'              => 'හරියට ආරාධනා නොවිය යුතුය.',
                 'discount-amount'             => 'මුදලේ වටිනාකම',
                 'grand-total'                 => 'මහේ මුලු මුදල',
                 'invalid-qty'                 => 'අමුදල අසාර්ථකයි.',
@@ -423,18 +424,19 @@ return [
                 'title'                  => 'අනුවා #:invoice_id',
             ],
 
-            'create' => [
-                'amount-per-unit' => ':amount ප්‍රත්ත්‍රයක් x :qty ප්‍රමාණයක්',
-                'create-invoice'  => 'ඉලෙක්ෂනය තනන්න',
-                'create-success'  => 'ඉලෙක්ෂන සාර්ථකයෙන් සෑදීම',
-                'creation-error'  => 'ඇණවුම් ඉලෙක්ෂනය හුවමාරු කිරීම සඳහා ඉඩ හැකියි.',
-                'invalid-qty'     => 'අපි ඉලෙක්ෂනයක් සඳහා අවලංගු ප්‍රමාණයක් සොයාගෙන ඇත.',
-                'invoice'         => 'ඉලෙක්ෂන',
-                'new-invoice'     => 'නව ඉලෙක්ෂන',
-                'product-error'   => 'නිෂ්පාදනය නොමැතිව ඉලෙක්ෂනය සෑදීමට හෝඳයේ නොහැක.',
-                'product-image'   => 'නිෂ්පාදන පින්තූරය',
-                'qty-to-invoiced' => 'ඉලෙක්ෂන කිරීමට අයදුම්පත',
-                'sku'             => 'SKU - :sku',
+            'create'   => [
+                'amount-per-unit'    => ':amount ප්‍රයෝජනයට x :qty ප්‍රමාණය',
+                'create-invoice'     => 'ඉල්ලීම් නිර්මාණය කරන්න',
+                'create-success'     => 'ඉල්ලීම් සාර්ථකව නිර්මාණය කරන ලදි',
+                'create-transaction' => 'ගනුදෙනු නිර්මාණය කරන්න',
+                'creation-error'     => 'ඇනවුම් ඉල්ලීම් නිර්මාණය කළ නොහැක.',
+                'invalid-qty'        => 'අයිතමයන් දක්වා නිවැරදි ප්‍රමාණය ලබා ගත යුතුයි.',
+                'invoice'            => 'ඉල්ලීම්',
+                'new-invoice'        => 'නව ඉල්ලීම්',
+                'product-error'      => 'නිෂ්පාදන විකල්පයන් නොමැති විකාශනය කළ නොහැක.',
+                'product-image'      => 'නිෂ්පාදන පින්තූරය',
+                'qty-to-invoiced'    => 'ඉල්ලීම් කිරීම සඳහා ප්‍රමාණය',
+                'sku'                => 'SKU - :sku',
             ],
 
             'invoice-pdf' => [
@@ -488,11 +490,16 @@ return [
                 ],
 
                 'create' => [
-                    'already-paid'               => 'දැක්කාක් ගෙවිය යුතුය',
-                    'invoice-missing'            => 'ක්රෙඩිට් නොපවතියි',
-                    'transaction-amount-exceeds' => 'ක්රෙඩිට් මුදල වඩාත් විය',
-                    'transaction-amount-zero'    => 'ක්රෙඩිට් මුදල වෙනස් විය',
-                    'transaction-saved'          => 'ක්රෙඩිට් සුරකින්න සාර්ථකව',
+                    'already-paid'               => 'දැනටම් ගෙවිය යුතු ලැබී ඇත',
+                    'amount'                     => 'මුදල',
+                    'create-transaction'         => 'සාදන්න ගිවිසුම',
+                    'invoice-id'                 => 'පිවිසුම් අංකය',
+                    'invoice-missing'            => 'පිවිසුම් නොමැත',
+                    'payment-method'             => 'ගෙවීමේ ක්‍රමය',
+                    'save-transaction'           => 'සාදන්නවාද සුරක්ෂිත කරන්න',
+                    'transaction-amount-exceeds' => 'සාදන්නවාද මුදල ඉක්මවූ',
+                    'transaction-amount-zero'    => 'සාදන්නවාද මුදල සිහිකැඳවලි',
+                    'transaction-saved'          => 'සාදන්නවාද සුරක්ෂිතව සුරක්ෂිත විය.',
                 ],
 
                 'view' => [
@@ -2255,8 +2262,8 @@ return [
                     'delete'              => 'මකන්න',
                     'download-sample'     => 'උදව් පිටපත බාගන්න',
                     'field-separator'     => 'ක්ෂේත්‍ර වෙක්වීමක්',
-                    'file-info-example'   => 'උදාහරණයක්, නමුත්, නිෂ්පාදන රූප ලිපි අඩංගු ස්ථානයට ගෙන යාම සහිත නම්, ෆයිල් වාර්තා / අපයෝජනී උපාංග ඩිරෙක්ටරිය්.',
-                    'file-info'           => 'අපයෝජනී උපාංගය සිටින පාරිභෝගි මන්ත්‍රණය වන්නේ / ප්‍රාථමිකයා රූපයට, සියලු නාමාවේදී, නිෂ්පාදන රූප / අපයෝජන රූපයට.',
+                    'file-info-example'   => 'සින්හල භාවිතා කිරීමට එක් උදාහරණය, උදාහරණයේ උපාංග පින්තූරේ සින්හල අරමුණ බහුල නොවනු ඇත. උදාහරණයේ /project-root/storage/app/import/product-images ෆෝල්ඩරයට ගෙන යන්න.',
+                    'file-info'           => '/project-root/storage/app/import වෙත ස්ථානය හැඳින්වීමෙන් පහත පෙන්වන අතර, product-images, import-images සින්හල භාවිතා කරන්න.',
                     'file'                => 'ගොනුව',
                     'general'             => 'සාමාන්‍ය',
                     'images-directory'    => 'රූප ඩිරෙක්ටරි පාත් මාර්ගය',
@@ -2279,8 +2286,7 @@ return [
                     'delete'              => 'මකන්න',
                     'download-sample'     => 'උදව් පිටපත බාගන්න',
                     'field-separator'     => 'ක්ෂේත්‍ර වෙක්වීමක්',
-                    'file-info-example'   => 'උදාහරණයක්, නමුත්, නිෂ්පාදන රූප ලිපි අඩංගු ස්ථානයට ගෙන යාම සහිත නම්, ෆයිල් වාර්තා / අපයෝජනී උපාංග ඩිරෙක්ටරිය්.',
-                    'file-info'           => 'අපයෝජනී උපාංගය සිටින පාරිභෝගි මන්ත්‍රණය වන්නේ / ප්‍රාථමිකයා රූපයට, සියලු නාමාවේදී, නිෂ්පාදන රූප / අපයෝජන රූපයට.',
+                    'file-info-example'   => 'සින්හල භාවිතා කිරීමට එක් උදාහරණය, උදාහරණයේ උපාංග පින්තූරේ සින්හල අරමුණ බහුල නොවනු ඇත. උදාහරණයේ /project-root/storage/app/import/product-images ෆෝල්ඩරයට ගෙන යන්න.',
                     'file'                => 'ගොනුව',
                     'general'             => 'සාමාන්‍ය',
                     'images-directory'    => 'රූප ඩිරෙක්ටරි පාත් මාර්ගය',
@@ -2801,7 +2807,7 @@ return [
                 'type' => [
                     'category-carousel' => 'ප්‍රවේශ කැරූසල්',
                     'footer-links'      => 'පිටු සල්ලි',
-                    'image-carousel'    => 'පින්තූර කැරූසල්',
+                    'image-carousel'    => 'රූප කැරැසල්',
                     'product-carousel'  => 'නිෂ්පාදන කැරූසල්',
                     'services-content'  => 'සේවා අන්තර්ගතය',
                     'static-content'    => 'ස්ථිර අන්තරජනනය',
@@ -3017,8 +3023,10 @@ return [
             'delete'                       => 'මකනවා',
             'enable-at-least-one-payment'  => 'අවශ්‍යයින් එකක් ගෙවා කරන්න.',
             'enable-at-least-one-shipping' => 'අවශ්‍යයින් එකක් ප්‍රවේශ කරන්න.',
+            'no-result-found'              => 'ප්‍රතිඵලයක් හමු නොවීය',
             'save-btn'                     => 'සුරක්ෂිතය සුරන්න',
             'save-message'                 => 'සුරක්ෂිතය සුරක්ෂිතව සුරක්ෂිත කරන ලදි',
+            'search'                       => 'සෙවීම',
             'title'                        => 'සැකසුම්',
 
             'general' => [
@@ -3630,6 +3638,12 @@ return [
             ],
 
             'toolbar' => [
+                'length-of' => ':length යාවත්කාලීන',
+                'of'        => 'යාවත්කාලීන',
+                'per-page'  => 'පිටුවක පිටුවක',
+                'results'   => ':total ප්‍රතිඵල',
+                'selected'  => ':total තෝරාගත්',
+
                 'mass-actions' => [
                     'select-action' => 'ක්‍රියාකාරකම තෝරන්න',
                     'select-option' => 'විකල්ප තෝරන්න',
@@ -3869,11 +3883,12 @@ return [
     ],
 
     'export' => [
-        'csv'              => 'CSV',
-        'download'         => 'බාගත කරන්න',
-        'export'           => 'අපාරයට පිටවන්න',
-        'no-records'       => 'අපාරයට හවුල් සාර්ථකවීමට හිතන්න',
-        'xls'              => 'XLS',
+        'csv'        => 'CSV',
+        'download'   => 'බාගත කරන්න',
+        'export'     => 'අපාරයට පිටවන්න',
+        'no-records' => 'අපාරයට හවුල් සාර්ථකවීමට හිතන්න',
+        'xls'        => 'XLS',
+        'xlsx'       => 'XLSX',
     ],
 
     'validations' => [

@@ -351,6 +351,7 @@ return [
                 'adjustment-refund'           => 'समायोजन वापसी',
                 'amount-per-unit'             => ':amount प्रति इकाई x :qty मात्रा',
                 'create-success'              => 'वापसी सफलतापूर्वक बनाई गई',
+                'creation-error'              => 'रिफंड निर्माण अनुमति नहीं है।',
                 'discount-amount'             => 'डिस्काउंट राशि',
                 'grand-total'                 => 'कुल योग',
                 'invalid-qty'                 => 'हमने चालानित आइटम्स के लिए एक अवैध मात्रा पाई है।',
@@ -423,18 +424,19 @@ return [
                 'title'                  => 'चालान #:invoice_id',
             ],
 
-            'create' => [
-                'amount-per-unit' => ':amount प्रति इकाई x :qty मात्रा',
-                'create-invoice'  => 'चालान बनाएं',
-                'create-success'  => 'चालान सफलतापूर्वक बनाया गया',
-                'creation-error'  => 'आदेश चालान निर्माण अनुमति नहीं है।',
-                'invalid-qty'     => 'हमने चालान करने के लिए अमान्य मात्रा पाई है।',
-                'invoice'         => 'चालान',
-                'new-invoice'     => 'नया चालान',
-                'product-error'   => 'माल बिना चालान नहीं बना सकता।',
-                'product-image'   => 'उत्पाद छवि',
-                'qty-to-invoiced' => 'चालान करने की मात्रा',
-                'sku'             => 'SKU - :sku',
+            'create'   => [
+                'amount-per-unit'    => ':amount प्रति इकाई x :qty मात्रा',
+                'create-invoice'     => 'चालान बनाएं',
+                'create-success'     => 'चालान सफलतापूर्वक बनाया गया',
+                'create-transaction' => 'लेन-देन बनाएं',
+                'creation-error'     => 'आदेश चालान बनाना अनुमति नहीं है।',
+                'invalid-qty'        => 'हमें मात्रा को चालान करने के लिए अमान्य माना गया। आइटम।',
+                'invoice'            => 'चालान',
+                'new-invoice'        => 'नया चालान',
+                'product-error'      => 'उत्पादों के बिना चालान नहीं बनाया जा सकता।',
+                'product-image'      => 'उत्पाद छवि',
+                'qty-to-invoiced'    => 'चालान करने की मात्रा',
+                'sku'                => 'SKU - :sku',
             ],
 
             'invoice-pdf' => [
@@ -488,11 +490,16 @@ return [
                 ],
 
                 'create' => [
-                    'already-paid'               => 'पहले ही भुगतान किया गया',
-                    'invoice-missing'            => 'चालान गायब है',
-                    'transaction-amount-exceeds' => 'लेन-देन राशि की सीमा पार हो गई है',
+                    'already-paid'               => 'पहले से ही भुगतान किया गया है',
+                    'amount'                     => 'राशि',
+                    'create-transaction'         => 'लेन-देन बनाएं',
+                    'invoice-id'                 => 'चालान आईडी',
+                    'invoice-missing'            => 'चालान अनुपस्थित है',
+                    'payment-method'             => 'भुगतान का तरीका',
+                    'save-transaction'           => 'लेन-देन सहेजें',
+                    'transaction-amount-exceeds' => 'लेन-देन राशि सीमा से अधिक है',
                     'transaction-amount-zero'    => 'लेन-देन राशि शून्य है',
-                    'transaction-saved'          => 'लेन-देन सफलतापूर्वक सहेजा गया है',
+                    'transaction-saved'          => 'लेन-देन सफलतापूर्वक सहेजा गया है।',
                 ],
 
                 'view' => [
@@ -2255,8 +2262,8 @@ return [
                     'delete'              => 'मिटाए',
                     'download-sample'     => 'उदाहरण डाउनलोड करे',
                     'field-separator'     => 'फ़ील्ड अलगाव',
-                    'file-info-example'   => 'उदाहरण के लिए, प्रोडक्ट-इमेज्स के लिए फाइलें प्रोजेक्ट-रूट/स्टोरेज/इम्पोर्ट/app/प्रोडक्ट-इमेज्स फोल्डर में रखे जाएं।',
-                    'file-info'           => 'प्रोजेक्ट-रूट/स्टोरेज/इम्पोर्ट/app के साथ साथ रिलेटिव पथ का उपयोग करें, उदाहरण के लिए प्रोडक्ट-इमेज्स, इम्पोर्ट-इमेज्स।',
+                    'file-info-example'   => 'उदाहरण के लिए, प्रोडक्ट-इमेज्स के लिए फाइलें /project-root/storage/app/import/product-images फोल्डर में रखे जाएं।',
+                    'file-info'           => '/project-root/storage/app/import के साथ साथ रिलेटिव पथ का उपयोग करें, उदाहरण के लिए प्रोडक्ट-इमेज्स, इम्पोर्ट-इमेज्स।',
                     'file'                => 'फ़ाइल',
                     'general'             => 'सामान्य',
                     'images-directory'    => 'छवियों का डायरेक्टरी पथ',
@@ -2279,8 +2286,8 @@ return [
                     'delete'              => 'मिटाए',
                     'download-sample'     => 'उदाहरण डाउनलोड करे',
                     'field-separator'     => 'फ़ील्ड अलगाव',
-                    'file-info-example'   => 'उदाहरण के लिए, प्रोडक्ट-इमेज्स के लिए फाइलें प्रोजेक्ट-रूट/स्टोरेज/इम्पोर्ट/app/प्रोडक्ट-इमेज्स फोल्डर में रखे जाएं।',
-                    'file-info'           => 'प्रोजेक्ट-रूट/स्टोरेज/इम्पोर्ट/app के साथ साथ रिलेटिव पथ का उपयोग करें, उदाहरण के लिए प्रोडक्ट-इमेज्स, इम्पोर्ट-इमेज्स।',
+                    'file-info-example'   => 'उदाहरण के लिए, प्रोडक्ट-इमेज्स के लिए फाइलें /project-root/storage/app/import/product-images फोल्डर में रखे जाएं।',
+                    'file-info'           => '/project-root/storage/app/import के साथ साथ रिलेटिव पथ का उपयोग करें, उदाहरण के लिए प्रोडक्ट-इमेज्स, इम्पोर्ट-इमेज्स।',
                     'file'                => 'फ़ाइल',
                     'general'             => 'सामान्य',
                     'images-directory'    => 'छवियों का डायरेक्टरी पथ',
@@ -2801,7 +2808,7 @@ return [
                 'type' => [
                     'category-carousel' => 'श्रेणी कैरोसल',
                     'footer-links'      => 'फ़ुटर लिंक्स',
-                    'image-carousel'    => 'छवि कैरोसल',
+                    'image-carousel'    => 'इमेज कैरोसेल',
                     'product-carousel'  => 'उत्पाद कैरोसल',
                     'services-content'  => 'सेवाएँ सामग्री',
                     'static-content'    => 'स्थिर सामग्री',
@@ -3017,8 +3024,10 @@ return [
             'delete'                       => 'हटाएं',
             'enable-at-least-one-payment'  => 'कम से कम एक भुगतान मेथड सक्षम करें।',
             'enable-at-least-one-shipping' => 'कम से कम एक शिपिंग मेथड सक्षम करें।',
+            'no-result-found'              => 'कोई परिणाम नहीं मिला',
             'save-btn'                     => 'कॉन्फ़िगरेशन सहेजें',
             'save-message'                 => 'कॉन्फ़िगरेशन सफलतापूर्वक सहेजा गया',
+            'search'                       => 'खोज',
             'title'                        => 'कॉन्फ़िगरेशन',
 
             'general' => [
@@ -3630,6 +3639,12 @@ return [
             ],
 
             'toolbar' => [
+                'length-of' => ':length का',
+                'of'        => 'का',
+                'per-page'  => 'प्रति पृष्ठ',
+                'results'   => ':total परिणाम',
+                'selected'  => ':total चयनित',
+
                 'mass-actions' => [
                     'select-action' => 'कार्रवाई चुनें',
                     'select-option' => 'विकल्प चुनें',
@@ -3870,11 +3885,13 @@ return [
     ],
 
     'export' => [
-        'csv'              => 'CSV',
-        'download'         => 'डाउनलोड करें',
-        'export'           => 'निर्यात',
-        'no-records'       => 'निर्यात के लिए कुछ नहीं है',
-        'xls'              => 'XLS',
+        'csv'        => 'CSV',
+        'download'   => 'डाउनलोड करें',
+        'export'     => 'निर्यात',
+        'no-records' => 'निर्यात के लिए कुछ नहीं है',
+        'xls'        => 'XLS',
+        'xlsx'       => 'एक्सएलएसएक्स',
+
     ],
 
     'validations' => [

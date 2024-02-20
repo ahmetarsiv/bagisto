@@ -351,6 +351,7 @@ return [
                 'adjustment-refund'           => 'Adjustment Refund',
                 'amount-per-unit'             => ':amount Per Unit x :qty Quantity',
                 'create-success'              => 'Refund created successfully',
+                'creation-error'              => 'Refund creation is not allowed.',
                 'discount-amount'             => 'Discount Amount',
                 'grand-total'                 => 'Grand Total',
                 'invalid-qty'                 => 'We found an invalid quantity to invoice items.',
@@ -424,17 +425,18 @@ return [
             ],
 
             'create'   => [
-                'amount-per-unit' => ':amount Per Unit x :qty Quantity',
-                'create-invoice'  => 'Create Invoice',
-                'create-success'  => 'Invoice created successfully',
-                'creation-error'  => 'Order invoice creation is not allowed.',
-                'invalid-qty'     => 'We found an invalid quantity to invoice items.',
-                'invoice'         => 'Invoice',
-                'new-invoice'     => 'New Invoice',
-                'product-error'   => 'Invoice can not be created without products.',
-                'product-image'   => 'Product Image',
-                'qty-to-invoiced' => 'Qty. to invoiced',
-                'sku'             => 'SKU - :sku',
+                'amount-per-unit'    => ':amount Per Unit x :qty Quantity',
+                'create-invoice'     => 'Create Invoice',
+                'create-success'     => 'Invoice created successfully',
+                'create-transaction' => 'Create Transaction',
+                'creation-error'     => 'Order invoice creation is not allowed.',
+                'invalid-qty'        => 'We found an invalid quantity to invoice items.',
+                'invoice'            => 'Invoice',
+                'new-invoice'        => 'New Invoice',
+                'product-error'      => 'Invoice can not be created without products.',
+                'product-image'      => 'Product Image',
+                'qty-to-invoiced'    => 'Qty to invoiced',
+                'sku'                => 'SKU - :sku',
             ],
 
             'invoice-pdf' => [
@@ -490,9 +492,15 @@ return [
 
                 'create' => [
                     'already-paid'               => 'Already paid',
+                    'amount'                     => 'Amount',
+                    'create-transaction'         => 'Create Transaction',
+                    'invoice-id'                 => 'Invoice ID',
                     'invoice-missing'            => 'Invoice Missing',
+                    'payment-method'             => 'Payment Method',
+                    'save-transaction'           => 'Save Transaction',
                     'transaction-amount-exceeds' => 'Transaction Amount exceeds',
                     'transaction-amount-zero'    => 'Transaction Amount zero',
+                    'transaction-saved'          => 'Transaction saved successfully.',
                 ],
 
                 'view' => [
@@ -2255,8 +2263,8 @@ return [
                     'delete'              => 'Delete',
                     'download-sample'     => 'Download Sample',
                     'field-separator'     => 'Field Separator',
-                    'file-info-example'   => 'For example, in case product-images, files should be placed into /project-root/storage/import/app/product-images folder.',
-                    'file-info'           => 'Use relative path to /project-root/storage/import/app, e.g. product-images, import-images.',
+                    'file-info-example'   => 'For example, in case product-images, files should be placed into /project-root/storage/app/import/product-images folder.',
+                    'file-info'           => 'Use relative path to /project-root/storage/app/import, e.g. product-images, import-images.',
                     'file'                => 'File',
                     'general'             => 'General',
                     'images-directory'    => 'Images Directory Path',
@@ -2279,8 +2287,8 @@ return [
                     'delete'              => 'Delete',
                     'download-sample'     => 'Download Sample',
                     'field-separator'     => 'Field Separator',
-                    'file-info-example'   => 'For example, in case product-images, files should be placed into /project-root/storage/import/app/product-images folder.',
-                    'file-info'           => 'Use relative path to /project-root/storage/import/app, e.g. product-images, import-images.',
+                    'file-info-example'   => 'For example, in case product-images, files should be placed into /project-root/storage/app/import/product-images folder.',
+                    'file-info'           => 'Use relative path to /project-root/storage/app/import, e.g. product-images, import-images.',
                     'file'                => 'File',
                     'general'             => 'General',
                     'images-directory'    => 'Images Directory Path',
@@ -2801,7 +2809,7 @@ return [
                 'type'       => [
                     'category-carousel' => 'Category Carousel',
                     'footer-links'      => 'Footer Links',
-                    'image-carousel'    => 'Slider Carousel',
+                    'image-carousel'    => 'Image Carousel',
                     'product-carousel'  => 'Product Carousel',
                     'services-content'  => 'Services Content',
                     'static-content'    => 'Static Content',
@@ -3017,8 +3025,10 @@ return [
             'delete'                       => 'Delete',
             'enable-at-least-one-payment'  => 'Enable at least one payment method.',
             'enable-at-least-one-shipping' => 'Enable at least one shipping method.',
+            'no-result-found'              => 'No result found',
             'save-btn'                     => 'Save Configuration',
             'save-message'                 => 'Configuration saved successfully',
+            'search'                       => 'Search',
             'title'                        => 'Configuration',
 
             'general' => [
@@ -3630,6 +3640,12 @@ return [
             ],
 
             'toolbar' => [
+                'length-of' => ':length of',
+                'of'        => 'of',
+                'per-page'  => 'Per Page',
+                'results'   => ':total Results',
+                'selected'  => ':total Selected',
+
                 'mass-actions' => [
                     'submit'        => 'Submit',
                     'select-option' => 'Select Option',
@@ -3874,6 +3890,7 @@ return [
         'export'     => 'Export',
         'no-records' => 'Nothing to export',
         'xls'        => 'XLS',
+        'xlsx'       => 'XLSX',
     ],
 
     'validations' => [

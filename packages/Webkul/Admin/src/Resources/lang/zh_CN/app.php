@@ -351,6 +351,7 @@ return [
                 'adjustment-refund'           => '调整退款',
                 'amount-per-unit'             => ':amount 每单位 x :qty 数量',
                 'create-success'              => '退款创建成功',
+                'creation-error'              => '退款创建不允许。',
                 'discount-amount'             => '折扣金额',
                 'grand-total'                 => '总计',
                 'invalid-qty'                 => '我们发现有无效的数量要开票。',
@@ -423,18 +424,19 @@ return [
                 'title'                  => '发票 #:invoice_id',
             ],
 
-            'create' => [
-                'amount-per-unit' => ':amount 每单位 x :qty 数量',
-                'create-invoice'  => '创建发票',
-                'create-success'  => '发票创建成功',
-                'creation-error'  => '不允许创建订单发票。',
-                'invalid-qty'     => '我们发现了无效的数量以开具发票。',
-                'invoice'         => '发票',
-                'new-invoice'     => '新发票',
-                'product-error'   => '没有产品无法创建发票。',
-                'product-image'   => '产品图片',
-                'qty-to-invoiced' => '要开具发票的数量',
-                'sku'             => 'SKU - :sku',
+            'create'   => [
+                'amount-per-unit'    => ':amount 每单位 x :qty 数量',
+                'create-invoice'     => '创建发票',
+                'create-success'     => '发票创建成功',
+                'create-transaction' => '创建交易',
+                'creation-error'     => '不允许创建订单发票。',
+                'invalid-qty'        => '我们发现无效的数量来开发票商品。',
+                'invoice'            => '发票',
+                'new-invoice'        => '新发票',
+                'product-error'      => '无法没有产品创建发票。',
+                'product-image'      => '产品图片',
+                'qty-to-invoiced'    => '要开发票的数量',
+                'sku'                => 'SKU - :sku',
             ],
 
             'invoice-pdf' => [
@@ -489,10 +491,15 @@ return [
 
                 'create' => [
                     'already-paid'               => '已支付',
-                    'invoice-missing'            => '缺少发票',
-                    'transaction-amount-exceeds' => '交易金额超过限制',
+                    'amount'                     => '金额',
+                    'create-transaction'         => '创建交易',
+                    'invoice-id'                 => '发票号',
+                    'invoice-missing'            => '发票丢失',
+                    'payment-method'             => '付款方式',
+                    'save-transaction'           => '保存交易',
+                    'transaction-amount-exceeds' => '交易金额超过',
                     'transaction-amount-zero'    => '交易金额为零',
-                    'transaction-saved'          => '交易保存成功',
+                    'transaction-saved'          => '交易已成功保存。',
                 ],
 
                 'view' => [
@@ -681,6 +688,7 @@ return [
                             'apply-to-all-name'   => '将名称应用于所有变体。',
                             'apply-to-all-sku'    => '将价格应用于所有 SKU。',
                             'apply-to-all-status' => '将状态应用于所有变体。',
+                            'apply-to-all-weight' => '对所有变体应用权重。',
                             'edit-inventories'    => '编辑库存',
                             'edit-names'          => '编辑名称',
                             'edit-prices'         => '编辑价格',
@@ -2254,8 +2262,8 @@ return [
                     'delete'              => '刪除',
                     'download-sample'     => '下載範例',
                     'field-separator'     => '欄位分隔符',
-                    'file-info-example'   => '例如，在 product-images 的情況下，檔案應放置在 /project-root/storage/import/app/product-images 資料夾中。',
-                    'file-info'           => '使用相對於 /project-root/storage/import/app 的路徑，例如 product-images, import-images。',
+                    'file-info-example'   => '例如，在 product-images 的情況下，檔案應放置在 /project-root/storage/app/import/product-images 資料夾中。',
+                    'file-info'           => '使用相對於 /project-root/storage/app/import 的路徑，例如 product-images, import-images。',
                     'file'                => '檔案',
                     'general'             => '一般',
                     'images-directory'    => '圖片目錄路徑',
@@ -2278,8 +2286,8 @@ return [
                     'delete'              => '刪除',
                     'download-sample'     => '下載範例',
                     'field-separator'     => '欄位分隔符',
-                    'file-info-example'   => '例如，在 product-images 的情況下，檔案應放置在 /project-root/storage/import/app/product-images 資料夾中。',
-                    'file-info'           => '使用相對於 /project-root/storage/import/app 的路徑，例如 product-images, import-images。',
+                    'file-info-example'   => '例如，在 product-images 的情況下，檔案應放置在 /project-root/storage/app/import/product-images 資料夾中。',
+                    'file-info'           => '使用相對於 /project-root/storage/app/import 的路徑，例如 product-images, import-images。',
                     'file'                => '檔案',
                     'general'             => '一般',
                     'images-directory'    => '圖片目錄路徑',
@@ -3016,8 +3024,10 @@ return [
             'delete'                       => '删除',
             'enable-at-least-one-payment'  => '至少启用一种支付方式。',
             'enable-at-least-one-shipping' => '至少启用一种配送方式。',
+            'no-result-found'              => '没有找到结果',
             'save-btn'                     => '保存配置',
             'save-message'                 => '配置保存成功',
+            'search'                       => '搜索',
             'title'                        => '配置',
 
             'general' => [
@@ -3629,6 +3639,12 @@ return [
             ],
 
             'toolbar' => [
+                'length-of' => ':length 的',
+                'of'        => '的',
+                'per-page'  => '每页',
+                'results'   => ':total 结果',
+                'selected'  => ':total 已选择',
+
                 'mass-actions' => [
                     'select-action' => '选择操作',
                     'select-option' => '选择选项',
@@ -3868,11 +3884,12 @@ return [
     ],
 
     'export' => [
-        'csv'              => 'CSV',
-        'download'         => '下载',
-        'export'           => '导出',
-        'no-records'       => '没有要导出的内容',
-        'xls'              => 'XLS',
+        'csv'        => 'CSV',
+        'download'   => '下载',
+        'export'     => '导出',
+        'no-records' => '没有要导出的内容',
+        'xls'        => 'XLS',
+        'xlsx'       => 'XLSX',
     ],
 
     'validations' => [

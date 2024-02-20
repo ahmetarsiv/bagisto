@@ -351,6 +351,7 @@ return [
                 'adjustment-refund'           => 'Виправлення повернення',
                 'amount-per-unit'             => ':amount за одиницю x :qty Кількість',
                 'create-success'              => 'Повернення створено успішно',
+                'creation-error'              => 'Створення повернення не дозволяється.',
                 'discount-amount'             => 'Сума знижки',
                 'grand-total'                 => 'Загальна сума',
                 'invalid-qty'                 => 'Ми виявили недійсну кількість для виставлення рахунків за товари.',
@@ -423,18 +424,19 @@ return [
                 'title'                  => 'Рахунок #:invoice_id',
             ],
 
-            'create' => [
-                'amount-per-unit' => ':amount За одиницю x :qty Кількість',
-                'create-invoice'  => 'Створити рахунок-фактуру',
-                'create-success'  => 'Рахунок-фактура успішно створена',
-                'creation-error'  => 'Створення рахунку-фактури замовлення не дозволяється.',
-                'invalid-qty'     => 'Ми знайшли недійсну кількість для елементів, які необхідно виставити на рахунок.',
-                'invoice'         => 'Рахунок-фактура',
-                'new-invoice'     => 'Новий рахунок-фактура',
-                'product-error'   => 'Рахунок-фактуру неможливо створити без продуктів.',
-                'product-image'   => 'Зображення продукту',
-                'qty-to-invoiced' => 'Кількість для виставлення рахунку',
-                'sku'             => 'Артикул - :sku',
+            'create'   => [
+                'amount-per-unit'    => ':amount За Одиницю x :qty Кількість',
+                'create-invoice'     => 'Створити Рахунок-фактуру',
+                'create-success'     => 'Рахунок-фактура успішно створена',
+                'create-transaction' => 'Створити Транзакцію',
+                'creation-error'     => 'Створення рахунку-фактури замовлення не дозволено.',
+                'invalid-qty'        => 'Ми знайшли недійсну кількість для виставлення рахунків за товари.',
+                'invoice'            => 'Рахунок-фактура',
+                'new-invoice'        => 'Нова Рахунок-фактура',
+                'product-error'      => 'Рахунок-фактура не може бути створена без товарів.',
+                'product-image'      => 'Зображення Продукту',
+                'qty-to-invoiced'    => 'Кількість для рахунків',
+                'sku'                => 'SKU - :sku',
             ],
 
             'invoice-pdf' => [
@@ -488,11 +490,16 @@ return [
                 ],
 
                 'create' => [
-                    'already-paid'               => 'Вже сплачено',
-                    'invoice-missing'            => 'Відсутній рахунок',
+                    'already-paid'               => 'Вже оплачено',
+                    'amount'                     => 'Сума',
+                    'create-transaction'         => 'Створити транзакцію',
+                    'invoice-id'                 => 'Номер рахунку-фактури',
+                    'invoice-missing'            => 'Рахунок-фактура відсутня',
+                    'payment-method'             => 'Спосіб оплати',
+                    'save-transaction'           => 'Зберегти транзакцію',
                     'transaction-amount-exceeds' => 'Сума транзакції перевищує',
-                    'transaction-amount-zero'    => 'Сума транзакції дорівнює нулю',
-                    'transaction-saved'          => 'Транзакція успішно збережена',
+                    'transaction-amount-zero'    => 'Сума транзакції нульова',
+                    'transaction-saved'          => 'Транзакцію успішно збережено.',
                 ],
 
                 'view' => [
@@ -2255,8 +2262,8 @@ return [
                     'delete'              => 'Видалити',
                     'download-sample'     => 'Завантажити приклад',
                     'field-separator'     => 'Роздільник полів',
-                    'file-info-example'   => 'Наприклад, у випадку з зображеннями продуктів, файли слід розміщувати в папку /project-root/storage/import/app/product-images.',
-                    'file-info'           => 'Вкажіть відносний шлях до /project-root/storage/import/app, наприклад product-images, import-images.',
+                    'file-info-example'   => 'Наприклад, у випадку з зображеннями продуктів, файли слід розміщувати в папку /project-root/storage/app/import/product-images.',
+                    'file-info'           => 'Вкажіть відносний шлях до /project-root/storage/app/import, наприклад product-images, import-images.',
                     'file'                => 'Файл',
                     'general'             => 'Загальні',
                     'images-directory'    => 'Шлях до папки з зображеннями',
@@ -2280,7 +2287,7 @@ return [
                     'download-sample'     => 'Завантажити приклад',
                     'field-separator'     => 'Роздільник полів',
                     'file-info-example'   => 'Наприклад, у випадку з зображеннями продуктів, файли слід розміщувати в папку /project-root/storage/import/app/product-images.',
-                    'file-info'           => 'Вкажіть відносний шлях до /project-root/storage/import/app, наприклад product-images, import-images.',
+                    'file-info'           => 'Вкажіть відносний шлях до /project-root/storage/app/import, наприклад product-images, import-images.',
                     'file'                => 'Файл',
                     'general'             => 'Загальні',
                     'images-directory'    => 'Шлях до папки з зображеннями',
@@ -2801,7 +2808,7 @@ return [
                 'type' => [
                     'category-carousel' => 'Категорійний Карусель',
                     'footer-links'      => 'Посилання У Підвалі',
-                    'image-carousel'    => 'Карусель Зображень',
+                    'image-carousel'    => 'Карусель зображень',
                     'product-carousel'  => 'Карусель Товарів',
                     'services-content'  => 'Контент послуг',
                     'static-content'    => 'Статичний Контент',
@@ -3017,8 +3024,10 @@ return [
             'delete'                       => 'Видалити',
             'enable-at-least-one-payment'  => 'Включіть принаймні один метод оплати.',
             'enable-at-least-one-shipping' => 'Включіть принаймні один метод доставки.',
+            'no-result-found'              => 'Результатів не знайдено',
             'save-btn'                     => 'Зберегти налаштування',
             'save-message'                 => 'Налаштування успішно збережено',
+            'search'                       => 'Пошук',
             'title'                        => 'Налаштування',
 
             'general' => [
@@ -3630,6 +3639,12 @@ return [
             ],
 
             'toolbar' => [
+                'length-of' => ':length з',
+                'of'        => 'з',
+                'per-page'  => 'На сторінку',
+                'results'   => ':total Результати',
+                'selected'  => ':total Обрані',
+
                 'mass-actions' => [
                     'select-action' => 'Вибрати дію',
                     'select-option' => 'Вибрати опцію',
@@ -3869,11 +3884,12 @@ return [
     ],
 
     'export' => [
-        'csv'              => 'CSV',
-        'download'         => 'Завантажити',
-        'export'           => 'Експорт',
-        'no-records'       => 'Нічого експортувати',
-        'xls'              => 'XLS',
+        'csv'        => 'CSV',
+        'download'   => 'Завантажити',
+        'export'     => 'Експорт',
+        'no-records' => 'Нічого експортувати',
+        'xls'        => 'XLS',
+        'xlsx'       => 'XLSX',
     ],
 
     'validations' => [

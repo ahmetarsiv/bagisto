@@ -351,6 +351,7 @@ return [
                 'adjustment-refund'           => 'Korekta zwrotu',
                 'amount-per-unit'             => ':amount na jednostkę x :qty Ilość',
                 'create-success'              => 'Zwrot został pomyślnie utworzony',
+                'creation-error'              => 'Tworzenie zwrotów nie jest dozwolone.',
                 'discount-amount'             => 'Kwota zniżki',
                 'grand-total'                 => 'Suma ogólna',
                 'invalid-qty'                 => 'Znaleziono nieprawidłową ilość przedmiotów do fakturacji.',
@@ -423,18 +424,19 @@ return [
                 'title'                  => 'Faktura #:invoice_id',
             ],
 
-            'create' => [
-                'amount-per-unit' => ':amount Na jednostkę x :qty Ilość',
-                'create-invoice'  => 'Utwórz fakturę',
-                'create-success'  => 'Faktura utworzona pomyślnie',
-                'creation-error'  => 'Nie wolno tworzyć faktury zamówienia.',
-                'invalid-qty'     => 'Znaleziono nieprawidłową ilość pozycji do faktury.',
-                'invoice'         => 'Faktura',
-                'new-invoice'     => 'Nowa faktura',
-                'product-error'   => 'Nie można tworzyć faktury bez produktów.',
-                'product-image'   => 'Zdjęcie produktu',
-                'qty-to-invoiced' => 'Ilość do faktury',
-                'sku'             => 'SKU - :sku',
+            'create'   => [
+                'amount-per-unit'    => ':amount Za Jednostkę x :qty Ilość',
+                'create-invoice'     => 'Utwórz Fakturę',
+                'create-success'     => 'Faktura została pomyślnie utworzona',
+                'create-transaction' => 'Utwórz Transakcję',
+                'creation-error'     => 'Tworzenie faktury zamówienia jest niedozwolone.',
+                'invalid-qty'        => 'Znaleziono nieprawidłową ilość do fakturowania przedmiotów.',
+                'invoice'            => 'Faktura',
+                'new-invoice'        => 'Nowa Faktura',
+                'product-error'      => 'Nie można utworzyć faktury bez produktów.',
+                'product-image'      => 'Zdjęcie Produktu',
+                'qty-to-invoiced'    => 'Ilość do faktury',
+                'sku'                => 'SKU - :sku',
             ],
 
             'invoice-pdf' => [
@@ -488,11 +490,16 @@ return [
                 ],
 
                 'create' => [
-                    'already-paid'               => 'Już opłacone',
+                    'already-paid'               => 'Już zapłacone',
+                    'amount'                     => 'Kwota',
+                    'create-transaction'         => 'Utwórz transakcję',
+                    'invoice-id'                 => 'Numer faktury',
                     'invoice-missing'            => 'Brak faktury',
+                    'payment-method'             => 'Metoda płatności',
+                    'save-transaction'           => 'Zapisz transakcję',
                     'transaction-amount-exceeds' => 'Kwota transakcji przekracza',
                     'transaction-amount-zero'    => 'Kwota transakcji wynosi zero',
-                    'transaction-saved'          => 'Transakcja zapisana pomyślnie',
+                    'transaction-saved'          => 'Transakcja została pomyślnie zapisana.',
                 ],
 
                 'view' => [
@@ -2255,8 +2262,8 @@ return [
                     'delete'              => 'Usuń',
                     'download-sample'     => 'Pobierz przykład',
                     'field-separator'     => 'Separator pól',
-                    'file-info-example'   => 'Na przykład, jeśli to produkt-obrazy, pliki powinny być umieszczone w folderze /project-root/storage/import/app/product-images.',
-                    'file-info'           => 'Użyj ścieżki względnej do /project-root/storage/import/app, np. product-images, import-images.',
+                    'file-info-example'   => 'Na przykład, jeśli to produkt-obrazy, pliki powinny być umieszczone w folderze /project-root/storage/app/import/product-images.',
+                    'file-info'           => 'Użyj ścieżki względnej do /project-root/storage/app/import, np. product-images, import-images.',
                     'file'                => 'Plik',
                     'general'             => 'Ogólne',
                     'images-directory'    => 'Ścieżka katalogu obrazów',
@@ -2279,8 +2286,8 @@ return [
                     'delete'              => 'Usuń',
                     'download-sample'     => 'Pobierz Przykład',
                     'field-separator'     => 'Separator pól',
-                    'file-info-example'   => 'Na przykład, w przypadku obrazów produktów, pliki powinny być umieszczone w folderze /project-root/storage/import/app/product-images.',
-                    'file-info'           => 'Użyj ścieżki względnej do /project-root/storage/import/app, np. product-images, import-images.',
+                    'file-info-example'   => 'Na przykład, w przypadku obrazów produktów, pliki powinny być umieszczone w folderze /project-root/storage/app/import/product-images.',
+                    'file-info'           => 'Użyj ścieżki względnej do /project-root/storage/app/import, np. product-images, import-images.',
                     'file'                => 'Plik',
                     'general'             => 'Ogólne',
                     'images-directory'    => 'Ścieżka do katalogu obrazów',
@@ -3017,8 +3024,10 @@ return [
             'delete'                       => 'Usuń',
             'enable-at-least-one-payment'  => 'Włącz co najmniej jedną metodę płatności.',
             'enable-at-least-one-shipping' => 'Włącz co najmniej jeden sposób dostawy.',
+            'no-result-found'              => 'nie znaleziono żadnych wyników',
             'save-btn'                     => 'Zapisz Konfigurację',
             'save-message'                 => 'Konfiguracja została pomyślnie zapisana',
+            'search'                       => 'Szukaj',
             'title'                        => 'Konfiguracja',
 
             'general' => [
@@ -3630,6 +3639,12 @@ return [
             ],
 
             'toolbar' => [
+                'length-of' => ':length z',
+                'of'        => 'z',
+                'per-page'  => 'Na stronę',
+                'results'   => ':total Wyniki',
+                'selected'  => ':total Wybrane',
+
                 'mass-actions' => [
                     'select-action' => 'Wybierz Akcję',
                     'select-option' => 'Wybierz Opcję',
@@ -3869,11 +3884,12 @@ return [
     ],
 
     'export' => [
-        'csv'              => 'CSV',
-        'download'         => 'Pobierz',
-        'export'           => 'Eksport',
-        'no-records'       => 'Nic do wyeksportowania',
-        'xls'              => 'XLS',
+        'csv'        => 'CSV',
+        'download'   => 'Pobierz',
+        'export'     => 'Eksport',
+        'no-records' => 'Nic do wyeksportowania',
+        'xls'        => 'XLS',
+        'xlsx'       => 'XLSX',
     ],
 
     'validations' => [

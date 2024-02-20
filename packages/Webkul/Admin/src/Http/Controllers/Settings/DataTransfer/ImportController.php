@@ -97,7 +97,7 @@ class ImportController extends Controller
             )
         );
 
-        Event::dispatch('data_transfer.imports.create.before', $import);
+        Event::dispatch('data_transfer.imports.create.after', $import);
 
         session()->flash('success', trans('admin::app.settings.data-transfer.imports.create-success'));
 
@@ -156,6 +156,9 @@ class ImportController extends Controller
                 'errors_count'         => 0,
                 'errors'               => null,
                 'error_file_path'      => null,
+                'started_at'           => null,
+                'completed_at'         => null,
+                'summary'              => null,
             ]
         );
 
@@ -177,7 +180,7 @@ class ImportController extends Controller
 
         $import = $this->importRepository->update($data, $import->id);
 
-        Event::dispatch('data_transfer.imports.update.before', $import);
+        Event::dispatch('data_transfer.imports.update.after', $import);
 
         session()->flash('success', trans('admin::app.settings.data-transfer.imports.update-success'));
 

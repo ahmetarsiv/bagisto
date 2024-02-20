@@ -351,6 +351,7 @@ return [
                 'adjustment-refund'           => 'Anpassung Rückerstattung',
                 'amount-per-unit'             => ':amount pro Einheit x :qty Menge',
                 'create-success'              => 'Rückerstattung erfolgreich erstellt',
+                'creation-error'              => 'Erstellung einer Rückerstattung ist nicht erlaubt.',
                 'discount-amount'             => 'Rabattbetrag',
                 'grand-total'                 => 'Gesamtsumme',
                 'invalid-qty'                 => 'Wir haben eine ungültige Menge zum Rechnungsstellen gefunden.',
@@ -423,18 +424,19 @@ return [
                 'title'                  => 'Rechnung #:invoice_id',
             ],
 
-            'create' => [
-                'amount-per-unit' => ':amount pro Einheit x :qty Menge',
-                'create-invoice'  => 'Rechnung erstellen',
-                'create-success'  => 'Rechnung erfolgreich erstellt',
-                'creation-error'  => 'Die Erstellung der Auftragsrechnung ist nicht erlaubt.',
-                'invalid-qty'     => 'Ungültige Menge für Rechnungspositionen gefunden.',
-                'invoice'         => 'Rechnung',
-                'new-invoice'     => 'Neue Rechnung',
-                'product-error'   => 'Rechnung kann nicht ohne Produkte erstellt werden.',
-                'product-image'   => 'Produktbild',
-                'qty-to-invoiced' => 'Menge zur Rechnungsstellung',
-                'sku'             => 'Artikelnummer - :sku',
+            'create'   => [
+                'amount-per-unit'    => ':amount Pro Einheit x :qty Menge',
+                'create-invoice'     => 'Rechnung erstellen',
+                'create-success'     => 'Rechnung erfolgreich erstellt',
+                'create-transaction' => 'Transaktion erstellen',
+                'creation-error'     => 'Bestellrechnungserstellung ist nicht erlaubt.',
+                'invalid-qty'        => 'Wir haben eine ungültige Menge zum Rechnen von Artikeln gefunden.',
+                'invoice'            => 'Rechnung',
+                'new-invoice'        => 'Neue Rechnung',
+                'product-error'      => 'Rechnung kann nicht ohne Produkte erstellt werden.',
+                'product-image'      => 'Produktbild',
+                'qty-to-invoiced'    => 'Menge zu verrechnen',
+                'sku'                => 'SKU - :sku',
             ],
 
             'invoice-pdf' => [
@@ -489,10 +491,15 @@ return [
 
                 'create' => [
                     'already-paid'               => 'Bereits bezahlt',
+                    'amount'                     => 'Betrag',
+                    'create-transaction'         => 'Transaktion erstellen',
+                    'invoice-id'                 => 'Rechnungs-ID',
                     'invoice-missing'            => 'Rechnung fehlt',
-                    'transaction-amount-exceeds' => 'Transaktionsbetrag überschreitet den Betrag',
+                    'payment-method'             => 'Zahlungsmethode',
+                    'save-transaction'           => 'Transaktion speichern',
+                    'transaction-amount-exceeds' => 'Transaktionsbetrag überschreitet',
                     'transaction-amount-zero'    => 'Transaktionsbetrag ist null',
-                    'transaction-saved'          => 'Transaktion erfolgreich gespeichert',
+                    'transaction-saved'          => 'Transaktion erfolgreich gespeichert.',
                 ],
 
                 'view' => [
@@ -2255,8 +2262,8 @@ return [
                     'delete'              => 'Löschen',
                     'download-sample'     => 'Beispiel herunterladen',
                     'field-separator'     => 'Feldtrennzeichen',
-                    'file-info-example'   => 'Beispiel: Bei Produktbildern sollten die Dateien im Ordner /Projekt-Wurzelverzeichnis/Storage/Import/App/Produktbilder platziert werden.',
-                    'file-info'           => 'Verwenden Sie den relativen Pfad zu /Projekt-Wurzelverzeichnis/Storage/Import/App, z. B. Produktbilder, Import-Bilder.',
+                    'file-info-example'   => 'Beispiel: Bei Produktbildern sollten die Dateien im Ordner /project-root/storage/app/import/product-images platziert werden.',
+                    'file-info'           => 'Verwenden Sie den relativen Pfad zu /project-root/storage/app/import, z. B. Produktbilder, Import-Bilder.',
                     'file'                => 'Datei',
                     'general'             => 'Allgemein',
                     'images-directory'    => 'Bilder-Verzeichnispfad',
@@ -2279,8 +2286,8 @@ return [
                     'delete'              => 'Löschen',
                     'download-sample'     => 'Beispiel herunterladen',
                     'field-separator'     => 'Feldtrennzeichen',
-                    'file-info-example'   => 'Beispiel: Bei Produktbildern sollten die Dateien im Ordner /Projekt-Wurzelverzeichnis/Storage/Import/App/Produktbilder platziert werden.',
-                    'file-info'           => 'Verwenden Sie den relativen Pfad zu /Projekt-Wurzelverzeichnis/Storage/Import/App, z. B. Produktbilder, Import-Bilder.',
+                    'file-info-example'   => 'Beispiel: Bei Produktbildern sollten die Dateien im Ordner /project-root/storage/app/import/product-images platziert werden.',
+                    'file-info'           => 'Verwenden Sie den relativen Pfad zu /project-root/storage/app/import, z. B. Produktbilder, Import-Bilder.',
                     'file'                => 'Datei',
                     'general'             => 'Allgemein',
                     'images-directory'    => 'Bilder-Verzeichnispfad',
@@ -2801,7 +2808,7 @@ return [
                 'type' => [
                     'category-carousel' => 'Kategorie Karussell',
                     'footer-links'      => 'Fußzeilen-Links',
-                    'image-carousel'    => 'Bild Karussell',
+                    'image-carousel'    => 'Bildkarussell',
                     'product-carousel'  => 'Produkt Karussell',
                     'services-content'  => 'Inhalt der Dienste',
                     'static-content'    => 'Statischer Inhalt',
@@ -3017,8 +3024,10 @@ return [
             'delete'                       => 'Löschen',
             'enable-at-least-one-payment'  => 'Mindestens eine Zahlungsmethode aktivieren.',
             'enable-at-least-one-shipping' => 'Mindestens eine Versandmethode aktivieren.',
+            'no-result-found'              => 'Keine Einträge gefunden',
             'save-btn'                     => 'Konfiguration speichern',
             'save-message'                 => 'Konfiguration erfolgreich gespeichert',
+            'search'                       => 'Suchen',
             'title'                        => 'Konfiguration',
 
             'general' => [
@@ -3624,6 +3633,12 @@ return [
 
         'datagrid' => [
             'toolbar' => [
+                'length-of' => ':length von',
+                'of'        => 'von',
+                'per-page'  => 'Pro Seite',
+                'results'   => ':total Ergebnisse',
+                'selected'  => ':total Ausgewählt',
+
                 'index' => [
                     'no-records-selected'              => 'Es wurden keine Datensätze ausgewählt.',
                     'must-select-a-mass-action-option' => 'Sie müssen eine Option für die Massenaktion auswählen.',
@@ -3869,11 +3884,12 @@ return [
     ],
 
     'export' => [
-        'csv'              => 'CSV',
-        'download'         => 'Herunterladen',
-        'export'           => 'Exportieren',
-        'no-records'       => 'Nichts zu exportieren',
-        'xls'              => 'XLS',
+        'csv'        => 'CSV',
+        'download'   => 'Herunterladen',
+        'export'     => 'Exportieren',
+        'no-records' => 'Nichts zu exportieren',
+        'xls'        => 'XLS',
+        'xlsx'       => 'XLSX',
     ],
 
     'validations' => [

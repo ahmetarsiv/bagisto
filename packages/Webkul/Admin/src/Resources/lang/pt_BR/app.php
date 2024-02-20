@@ -351,6 +351,7 @@ return [
                 'adjustment-refund'           => 'Reembolso de Ajuste',
                 'amount-per-unit'             => ':amount Por Unidade x :qty Quantidade',
                 'create-success'              => 'Reembolso criado com sucesso',
+                'creation-error'              => 'A criação de reembolsos não é permitida.',
                 'discount-amount'             => 'Valor do Desconto',
                 'grand-total'                 => 'Total Geral',
                 'invalid-qty'                 => 'Encontramos uma quantidade inválida para faturar itens.',
@@ -423,18 +424,19 @@ return [
                 'title'                  => 'Fatura #:invoice_id',
             ],
 
-            'create' => [
-                'amount-per-unit' => ':amount Por Unidade x :qty Quantidade',
-                'create-invoice'  => 'Criar Fatura',
-                'create-success'  => 'Fatura criada com sucesso',
-                'creation-error'  => 'A criação da fatura do pedido não é permitida.',
-                'invalid-qty'     => 'Encontramos uma quantidade inválida para itens a faturar.',
-                'invoice'         => 'Fatura',
-                'new-invoice'     => 'Nova Fatura',
-                'product-error'   => 'Não é possível criar uma fatura sem produtos.',
-                'product-image'   => 'Imagem do Produto',
-                'qty-to-invoiced' => 'Quantidade a faturar',
-                'sku'             => 'SKU - :sku',
+            'create'   => [
+                'amount-per-unit'    => ':amount Por Unidade x :qty Quantidade',
+                'create-invoice'     => 'Criar Fatura',
+                'create-success'     => 'Fatura criada com sucesso',
+                'create-transaction' => 'Criar Transação',
+                'creation-error'     => 'Não é permitida a criação de fatura de pedido.',
+                'invalid-qty'        => 'Encontramos uma quantidade inválida para faturar os itens.',
+                'invoice'            => 'Fatura',
+                'new-invoice'        => 'Nova Fatura',
+                'product-error'      => 'Não é possível criar uma fatura sem produtos.',
+                'product-image'      => 'Imagem do Produto',
+                'qty-to-invoiced'    => 'Quantidade a faturar',
+                'sku'                => 'SKU - :sku',
             ],
 
             'invoice-pdf' => [
@@ -488,11 +490,16 @@ return [
                 ],
 
                 'create' => [
-                    'already-paid'               => 'Já Pago',
+                    'already-paid'               => 'Já pago',
+                    'amount'                     => 'Valor',
+                    'create-transaction'         => 'Criar Transação',
+                    'invoice-id'                 => 'ID da Fatura',
                     'invoice-missing'            => 'Fatura Ausente',
-                    'transaction-amount-exceeds' => 'Valor da Transação Excede',
-                    'transaction-amount-zero'    => 'Valor da Transação Zero',
-                    'transaction-saved'          => 'Transação Salva com Sucesso',
+                    'payment-method'             => 'Método de Pagamento',
+                    'save-transaction'           => 'Salvar Transação',
+                    'transaction-amount-exceeds' => 'Valor da Transação excede',
+                    'transaction-amount-zero'    => 'Valor da Transação zero',
+                    'transaction-saved'          => 'Transação salva com sucesso.',
                 ],
 
                 'view' => [
@@ -2255,8 +2262,8 @@ return [
                     'delete'              => 'Excluir',
                     'download-sample'     => 'Baixar Exemplo',
                     'field-separator'     => 'Separador de Campos',
-                    'file-info-example'   => 'Por exemplo, em caso de product-images, os arquivos devem ser colocados na pasta /project-root/storage/import/app/product-images.',
-                    'file-info'           => 'Use a referência de caminho para /project-root/storage/import/app, por exemplo, product-images, import-images.',
+                    'file-info-example'   => 'Por exemplo, em caso de product-images, os arquivos devem ser colocados na pasta /project-root/storage/app/import/product-images.',
+                    'file-info'           => 'Use a referência de caminho para /project-root/storage/app/import, por exemplo, product-images, import-images.',
                     'file'                => 'Arquivo',
                     'general'             => 'Geral',
                     'images-directory'    => 'Caminho da Pasta de Imagens',
@@ -2279,8 +2286,8 @@ return [
                     'delete'              => 'Excluir',
                     'download-sample'     => 'Baixar Exemplo',
                     'field-separator'     => 'Separador de Campos',
-                    'file-info-example'   => 'Por exemplo, em caso de product-images, os arquivos devem ser colocados na pasta /project-root/storage/import/app/product-images.',
-                    'file-info'           => 'Use a referência de caminho para /project-root/storage/import/app, por exemplo, product-images, import-images.',
+                    'file-info-example'   => 'Por exemplo, em caso de product-images, os arquivos devem ser colocados na pasta /project-root/storage/app/import/product-images.',
+                    'file-info'           => 'Use a referência de caminho para /project-root/storage/app/import, por exemplo, product-images, import-images.',
                     'file'                => 'Arquivo',
                     'general'             => 'Geral',
                     'images-directory'    => 'Caminho da Pasta de Imagens',
@@ -2801,7 +2808,7 @@ return [
                 'type' => [
                     'category-carousel' => 'Carrossel de Categoria',
                     'footer-links'      => 'Links do Rodapé',
-                    'image-carousel'    => 'Carrossel de Imagens',
+                    'image-carousel'    => 'Carrossel de imagens',
                     'product-carousel'  => 'Carrossel de Produtos',
                     'services-content'  => 'Conteúdo de serviços',
                     'static-content'    => 'Conteúdo Estático',
@@ -3017,8 +3024,10 @@ return [
             'delete'                       => 'Apagar',
             'enable-at-least-one-payment'  => 'Ativar pelo menos um método de pagamento.',
             'enable-at-least-one-shipping' => 'Ativar pelo menos um método de envio.',
+            'no-result-found'              => 'nenhum resultado encontrado',
             'save-btn'                     => 'Salvar Configuração',
             'save-message'                 => 'Configuração salva com sucesso',
+            'search'                       => 'Procurar',
             'title'                        => 'Configuração',
 
             'general' => [
@@ -3630,6 +3639,12 @@ return [
             ],
 
             'toolbar' => [
+                'length-of' => ':length de',
+                'of'        => 'de',
+                'per-page'  => 'Por página',
+                'results'   => ':total Resultados',
+                'selected'  => ':total Selecionados',
+
                 'mass-actions' => [
                     'submit'        => 'Soumettre',
                     'select-option' => 'Sélectionner une option',
@@ -3869,11 +3884,12 @@ return [
     ],
 
     'export' => [
-        'csv'              => 'CSV',
-        'download'         => 'Télécharger',
-        'export'           => 'Exporter',
-        'no-records'       => 'Rien à exporter',
-        'xls'              => 'XLS',
+        'csv'        => 'CSV',
+        'download'   => 'Télécharger',
+        'export'     => 'Exporter',
+        'no-records' => 'Rien à exporter',
+        'xls'        => 'XLS',
+        'xlsx'       => 'XLSX',
     ],
 
     'validations' => [

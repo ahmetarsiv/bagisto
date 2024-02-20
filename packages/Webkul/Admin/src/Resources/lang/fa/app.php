@@ -351,6 +351,7 @@ return [
                 'adjustment-refund'           => 'بازپرداخت تنظیمی',
                 'amount-per-unit'             => ':amount در هر واحد x :qty تعداد',
                 'create-success'              => 'بازپرداخت با موفقیت ایجاد شد',
+                'creation-error'              => 'ایجاد بازپرداخت مجاز نیست.',
                 'discount-amount'             => 'مقدار تخفیف',
                 'grand-total'                 => 'جمع کل',
                 'invalid-qty'                 => 'ما تعداد نامعتبری برای موارد صورتحسابی پیدا کردیم.',
@@ -424,17 +425,18 @@ return [
             ],
 
             'create'   => [
-                'amount-per-unit' => ':amount در هر واحد x :qty تعداد',
-                'create-invoice'  => 'ایجاد فاکتور',
-                'create-success'  => 'فاکتور با موفقیت ایجاد شد',
-                'creation-error'  => 'ایجاد فاکتور سفارش مجاز نمی‌باشد.',
-                'invalid-qty'     => 'ما تعداد نامعتبری برای موارد فاکتوری یافتیم.',
-                'invoice'         => 'فاکتور',
-                'new-invoice'     => 'فاکتور جدید',
-                'product-error'   => 'فاکتور بدون محصول ایجاد نمی‌شود.',
-                'product-image'   => 'تصویر محصول',
-                'qty-to-invoiced' => 'تعداد برای صدور فاکتور',
-                'sku'             => 'شناسه SKU - :sku',
+                'amount-per-unit'    => ':amount در هر واحد x :qty مقدار',
+                'create-invoice'     => 'ایجاد فاکتور',
+                'create-success'     => 'فاکتور با موفقیت ایجاد شد',
+                'create-transaction' => 'ایجاد تراکنش',
+                'creation-error'     => 'ایجاد فاکتور سفارش مجاز نیست.',
+                'invalid-qty'        => 'ما مقدار نامعتبری برای صورتحساب کردن موارد پیدا کردیم.',
+                'invoice'            => 'فاکتور',
+                'new-invoice'        => 'فاکتور جدید',
+                'product-error'      => 'فاکتور بدون محصولات قابل ایجاد نیست.',
+                'product-image'      => 'تصویر محصول',
+                'qty-to-invoiced'    => 'مقدار برای فاکتور',
+                'sku'                => 'SKU - :sku',
             ],
 
             'invoice-pdf' => [
@@ -487,12 +489,17 @@ return [
                     'transaction-id'     => 'شناسه تراکنش',
                 ],
 
-                'create'  => [
+                'create' => [
                     'already-paid'               => 'قبلاً پرداخت شده',
-                    'invoice-missing'            => 'صورتحساب موجود نیست',
-                    'transaction-amount-exceeds' => 'مقدار تراکنش بیشتر از حد مجاز است',
-                    'transaction-amount-zero'    => 'مقدار تراکنش صفر است',
-                    'transaction-saved'          => 'تراکنش با موفقیت ذخیره شد',
+                    'amount'                     => 'مبلغ',
+                    'create-transaction'         => 'ایجاد تراکنش',
+                    'invoice-id'                 => 'شناسه فاکتور',
+                    'invoice-missing'            => 'فاکتور یافت نشد',
+                    'payment-method'             => 'روش پرداخت',
+                    'save-transaction'           => 'ذخیره تراکنش',
+                    'transaction-amount-exceeds' => 'مبلغ تراکنش بیش از حد مجاز است',
+                    'transaction-amount-zero'    => 'مبلغ تراکنش صفر است',
+                    'transaction-saved'          => 'تراکنش با موفقیت ذخیره شد.',
                 ],
 
                 'view' => [
@@ -2255,8 +2262,8 @@ return [
                     'delete'              => 'حذف',
                     'download-sample'     => 'دانلود نمونه',
                     'field-separator'     => 'جداکننده فیلد',
-                    'file-info-example'   => 'برای مثال، در صورت تصاویر محصول، فایل‌ها باید در /project-root/storage/import/app/product-images قرار گیرند.',
-                    'file-info'           => 'از مسیر نسبی به /project-root/storage/import/app استفاده کنید، به عنوان مثال product-images، import-images.',
+                    'file-info-example'   => 'برای مثال، در صورت تصاویر محصول، فایل‌ها باید در /project-root/storage/app/import/product-images قرار گیرند.',
+                    'file-info'           => 'از مسیر نسبی به /project-root/storage/app/import استفاده کنید، به عنوان مثال product-images، import-images.',
                     'file'                => 'فایل',
                     'general'             => 'عمومی',
                     'images-directory'    => 'مسیر پوشه تصاویر',
@@ -2279,8 +2286,8 @@ return [
                     'delete'              => 'حذف',
                     'download-sample'     => 'دانلود نمونه',
                     'field-separator'     => 'جداکننده فیلد',
-                    'file-info-example'   => 'برای مثال، در صورت تصاویر محصول، فایل‌ها باید در /project-root/storage/import/app/product-images قرار گیرند.',
-                    'file-info'           => 'از مسیر نسبی به /project-root/storage/import/app استفاده کنید، به عنوان مثال product-images، import-images.',
+                    'file-info-example'   => 'برای مثال، در صورت تصاویر محصول، فایل‌ها باید در /project-root/storage/app/import/product-images قرار گیرند.',
+                    'file-info'           => 'از مسیر نسبی به /project-root/storage/app/import استفاده کنید، به عنوان مثال product-images، import-images.',
                     'file'                => 'فایل',
                     'general'             => 'عمومی',
                     'images-directory'    => 'مسیر پوشه تصاویر',
@@ -2801,7 +2808,7 @@ return [
                 'type' => [
                     'category-carousel' => 'کاروسل دسته‌بندی',
                     'footer-links'      => 'لینک‌های پاورقی',
-                    'image-carousel'    => 'کاروسل تصاویر',
+                    'image-carousel'    => 'کروسل تصاویر',
                     'product-carousel'  => 'کاروسل محصولات',
                     'services-content'  => 'محتوای خدمات',
                     'static-content'    => 'محتوای استاتیک',
@@ -3017,8 +3024,10 @@ return [
             'delete'                       => 'حذف',
             'enable-at-least-one-payment'  => 'حداقل یک روش پرداخت را فعال کنید.',
             'enable-at-least-one-shipping' => 'حداقل یک روش حمل و نقل را فعال کنید.',
+            'no-result-found'              => 'هیچ نتیجه ای یافت نشد',
             'save-btn'                     => 'ذخیره پیکربندی',
             'save-message'                 => 'پیکربندی با موفقیت ذخیره شد',
+            'search'                       => 'جستجو کردن',
             'title'                        => 'پیکربندی',
 
             'general' => [
@@ -3630,6 +3639,12 @@ return [
             ],
 
             'toolbar' => [
+                'length-of' => ':length از',
+                'of'        => 'از',
+                'per-page'  => 'برای هر صفحه',
+                'results'   => ':total نتایج',
+                'selected'  => ':total انتخاب شده',
+
                 'mass-actions' => [
                     'select-action' => 'انتخاب عملیات',
                     'select-option' => 'انتخاب گزینه',
@@ -3869,11 +3884,12 @@ return [
     ],
 
     'export' => [
-        'csv'              => 'CSV',
-        'download'         => 'دانلود',
-        'export'           => 'خروجی گرفتن',
-        'no-records'       => 'چیزی برای خروجی گرفتن وجود ندارد',
-        'xls'              => 'XLS',
+        'csv'        => 'CSV',
+        'download'   => 'دانلود',
+        'export'     => 'خروجی گرفتن',
+        'no-records' => 'چیزی برای خروجی گرفتن وجود ندارد',
+        'xls'        => 'XLS',
+        'xlsx'       => 'اکس ال اس ایکس',
     ],
 
     'validations' => [

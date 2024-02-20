@@ -351,6 +351,7 @@ return [
                 'adjustment-refund'           => 'Возврат корректировки',
                 'amount-per-unit'             => ':amount за единицу x :qty Количество',
                 'create-success'              => 'Возврат успешно создан',
+                'creation-error'              => 'Создание возврата не разрешено.',
                 'discount-amount'             => 'Сумма скидки',
                 'grand-total'                 => 'Общая сумма',
                 'invalid-qty'                 => 'Обнаружено недействительное количество товаров для выставления счета.',
@@ -423,18 +424,19 @@ return [
                 'title'                  => 'Счет #:invoice_id',
             ],
 
-            'create' => [
-                'amount-per-unit' => ':amount За единицу x :qty Количество',
-                'create-invoice'  => 'Создать счет-фактуру',
-                'create-success'  => 'Счет-фактура успешно создана',
-                'creation-error'  => 'Создание счета-фактуры заказа не разрешено.',
-                'invalid-qty'     => 'Мы обнаружили недопустимое количество для выставления счета по товарам.',
-                'invoice'         => 'Счет-фактура',
-                'new-invoice'     => 'Новый счет-фактура',
-                'product-error'   => 'Счет-фактуру нельзя создать без товаров.',
-                'product-image'   => 'Изображение товара',
-                'qty-to-invoiced' => 'Количество для выставления счета',
-                'sku'             => 'Артикул - :sku',
+            'create'   => [
+                'amount-per-unit'    => ':amount За единицу x :qty Количество',
+                'create-invoice'     => 'Создать Счет',
+                'create-success'     => 'Счет успешно создан',
+                'create-transaction' => 'Создать Транзакцию',
+                'creation-error'     => 'Создание счета заказа не разрешено.',
+                'invalid-qty'        => 'Мы обнаружили недопустимое количество для выставления счетов за товары.',
+                'invoice'            => 'Счет',
+                'new-invoice'        => 'Новый Счет',
+                'product-error'      => 'Невозможно создать счет без товаров.',
+                'product-image'      => 'Изображение Товара',
+                'qty-to-invoiced'    => 'Количество для выставления счетов',
+                'sku'                => 'Артикул - :sku',
             ],
 
             'invoice-pdf' => [
@@ -489,10 +491,15 @@ return [
 
                 'create' => [
                     'already-paid'               => 'Уже оплачено',
-                    'invoice-missing'            => 'Счет отсутствует',
+                    'amount'                     => 'Сумма',
+                    'create-transaction'         => 'Создать транзакцию',
+                    'invoice-id'                 => 'Идентификатор счета',
+                    'invoice-missing'            => 'Отсутствует счет',
+                    'payment-method'             => 'Метод оплаты',
+                    'save-transaction'           => 'Сохранить транзакцию',
                     'transaction-amount-exceeds' => 'Сумма транзакции превышает',
                     'transaction-amount-zero'    => 'Сумма транзакции равна нулю',
-                    'transaction-saved'          => 'Транзакция успешно сохранена',
+                    'transaction-saved'          => 'Транзакция успешно сохранена.',
                 ],
 
                 'view' => [
@@ -2249,13 +2256,14 @@ return [
             'imports' => [
                 'create'            => [
                     'action'              => 'Действие',
+                    'allowed-errors'      => 'Разрешенные ошибки',
                     'back-btn'            => 'Назад',
                     'create-update'       => 'Создать/Обновить',
                     'delete'              => 'Удалить',
                     'download-sample'     => 'Скачать Пример',
                     'field-separator'     => 'Разделитель Полей',
-                    'file-info-example'   => 'Например, в случае product-images, файлы должны быть помещены в папку /project-root/storage/import/app/product-images.',
-                    'file-info'           => 'Используйте относительный путь к /project-root/storage/import/app, например, product-images, import-images.',
+                    'file-info-example'   => 'Например, в случае product-images, файлы должны быть помещены в папку /project-root/storage/app/import/product-images.',
+                    'file-info'           => 'Используйте относительный путь к /project-root/storage/app/import, например, product-images, import-images.',
                     'file'                => 'Файл',
                     'general'             => 'Общие',
                     'images-directory'    => 'Путь к Папке Изображений',
@@ -2272,13 +2280,14 @@ return [
 
                 'edit'              => [
                     'action'              => 'Действие',
+                    'allowed-errors'      => 'Разрешенные ошибки',
                     'back-btn'            => 'Назад',
                     'create-update'       => 'Создать/Обновить',
                     'delete'              => 'Удалить',
                     'download-sample'     => 'Скачать Пример',
                     'field-separator'     => 'Разделитель Полей',
-                    'file-info-example'   => 'Например, в случае product-images, файлы должны быть помещены в папку /project-root/storage/import/app/product-images.',
-                    'file-info'           => 'Используйте относительный путь к /project-root/storage/import/app, например, product-images, import-images.',
+                    'file-info-example'   => 'Например, в случае product-images, файлы должны быть помещены в папку /project-root/storage/app/import/product-images.',
+                    'file-info'           => 'Используйте относительный путь к /project-root/storage/app/import, например, product-images, import-images.',
                     'file'                => 'Файл',
                     'general'             => 'Общие',
                     'images-directory'    => 'Путь к Папке Изображений',
@@ -3015,8 +3024,10 @@ return [
             'delete'                       => 'Удалить',
             'enable-at-least-one-payment'  => 'Включите хотя бы один метод оплаты.',
             'enable-at-least-one-shipping' => 'Включите хотя бы один метод доставки.',
+            'no-result-found'              => 'Результатов не найдено',
             'save-btn'                     => 'Сохранить настройки',
             'save-message'                 => 'Настройки успешно сохранены',
+            'search'                       => 'Поиск',
             'title'                        => 'Настройки',
 
             'general' => [
@@ -3628,6 +3639,12 @@ return [
             ],
 
             'toolbar' => [
+                'length-of' => ':length из',
+                'of'        => 'из',
+                'per-page'  => 'На страницу',
+                'results'   => ':total Результаты',
+                'selected'  => ':total Выбрано',
+
                 'mass-actions' => [
                     'select-action' => 'Выбрать действие',
                     'select-option' => 'Выбрать опцию',
@@ -3867,11 +3884,12 @@ return [
     ],
 
     'export' => [
-        'csv'              => 'CSV',
-        'download'         => 'Скачать',
-        'export'           => 'Экспорт',
-        'no-records'       => 'Нет данных для экспорта',
-        'xls'              => 'XLS',
+        'csv'        => 'CSV',
+        'download'   => 'Скачать',
+        'export'     => 'Экспорт',
+        'no-records' => 'Нет данных для экспорта',
+        'xls'        => 'XLS',
+        'xlsx'       => 'XLSX',
     ],
 
     'validations' => [

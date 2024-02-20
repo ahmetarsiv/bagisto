@@ -351,6 +351,7 @@ return [
                 'adjustment-refund'           => 'החזר התאמה',
                 'adjustment-fee'              => 'עמלת התאמה',
                 'create-success'              => 'ההחזר נוצר בהצלחה',
+                'creation-error'              => 'יצירת החזרים אינה מותרת.',
                 'discount-amount'             => 'סכום הנחה',
                 'grand-total'                 => 'סכום כולל',
                 'item-ordered'                => 'הוזמן (:qty_ordered)',
@@ -424,17 +425,18 @@ return [
             ],
 
             'create'   => [
-                'amount-per-unit' => ':amount ליחידה x :qty כמות',
-                'create-invoice'  => 'צור חשבונית',
-                'create-success'  => 'חשבונית נוצרה בהצלחה',
-                'creation-error'  => 'אין תרשום ליצירת חשבונית הזמנה.',
-                'invalid-qty'     => 'גילינו כמות לא תקנית לחיוב מוצרים.',
-                'invoice'         => 'חשבונית',
-                'new-invoice'     => 'חשבונית חדשה',
-                'product-error'   => 'לא ניתן ליצור חשבונית בלעדי מוצרים.',
-                'product-image'   => 'תמונת המוצר',
-                'qty-to-invoiced' => 'כמות לחיוב',
-                'sku'             => 'SKU - :sku',
+                'amount-per-unit'    => ':amount לכל יחידה x :qty כמות',
+                'create-invoice'     => 'צור חשבונית',
+                'create-success'     => 'חשבונית נוצרה בהצלחה',
+                'create-transaction' => 'צור עסקה',
+                'creation-error'     => 'יצירת חשבונית הזמנה אינה מורשית.',
+                'invalid-qty'        => 'מצאנו כמות לא חוקית לחשבונית מוצרים.',
+                'invoice'            => 'חשבונית',
+                'new-invoice'        => 'חשבונית חדשה',
+                'product-error'      => 'לא ניתן ליצור חשבונית בלי מוצרים.',
+                'product-image'      => 'תמונת המוצר',
+                'qty-to-invoiced'    => 'כמות לחשבונית',
+                'sku'                => 'SKU - :sku',
             ],
 
             'invoice-pdf' => [
@@ -489,10 +491,15 @@ return [
 
                 'create' => [
                     'already-paid'               => 'כבר שולם',
+                    'amount'                     => 'סכום',
+                    'create-transaction'         => 'צור עסקה',
+                    'invoice-id'                 => 'מזהה חשבונית',
                     'invoice-missing'            => 'חשבונית חסרה',
-                    'transaction-amount-exceeds' => 'סכום העסקה גבוה מדי',
+                    'payment-method'             => 'אמצעי תשלום',
+                    'save-transaction'           => 'שמור עסקה',
+                    'transaction-amount-exceeds' => 'סכום העסקה חורג מהמותר',
                     'transaction-amount-zero'    => 'סכום העסקה אפס',
-                    'transaction-saved'          => 'העסקה נשמרה בהצלחה',
+                    'transaction-saved'          => 'עסקה נשמרה בהצלחה.',
                 ],
 
                 'view' => [
@@ -2255,8 +2262,8 @@ return [
                     'delete'              => 'מחיקה',
                     'download-sample'     => 'הורד דוגמא',
                     'field-separator'     => 'מפריד שדות',
-                    'file-info-example'   => 'לדוגמה, במקרה של תמונות מוצרים, יש לשים את הקבצים בתיקייה /project-root/storage/import/app/product-images.',
-                    'file-info'           => 'השתמש בנתיב יחסי אל /project-root/storage/import/app, לדוגמה: product-images, import-images.',
+                    'file-info-example'   => 'לדוגמה, במקרה של תמונות מוצרים, יש לשים את הקבצים בתיקייה /project-root/storage/app/import/product-images.',
+                    'file-info'           => 'השתמש בנתיב יחסי אל /project-root/storage/app/import, לדוגמה: product-images, import-images.',
                     'file'                => 'קובץ',
                     'general'             => 'כללי',
                     'images-directory'    => 'נתיב תיקיית התמונות',
@@ -2279,8 +2286,8 @@ return [
                     'delete'              => 'מחיקה',
                     'download-sample'     => 'הורד דוגמא',
                     'field-separator'     => 'מפריד שדות',
-                    'file-info-example'   => 'לדוגמה, במקרה של תמונות מוצרים, יש לשים את הקבצים בתיקייה /project-root/storage/import/app/product-images.',
-                    'file-info'           => 'השתמש בנתיב יחסי אל /project-root/storage/import/app, לדוגמה: product-images, import-images.',
+                    'file-info-example'   => 'לדוגמה, במקרה של תמונות מוצרים, יש לשים את הקבצים בתיקייה /project-root/storage/app/import/product-images.',
+                    'file-info'           => 'השתמש בנתיב יחסי אל /project-root/storage/app/import, לדוגמה: product-images, import-images.',
                     'file'                => 'קובץ',
                     'general'             => 'כללי',
                     'images-directory'    => 'נתיב תיקיית התמונות',
@@ -3017,8 +3024,10 @@ return [
             'delete'                       => 'מחק',
             'enable-at-least-one-shipping' => 'הפעל לפחות אחת משיטות המשלוח.',
             'enable-at-least-one-payment'  => 'הפעל לפחות אחת משיטות התשלום.',
+            'no-result-found'              => 'לא נמצאו תוצאות',
             'save-btn'                     => 'שמור הגדרות',
             'save-message'                 => 'ההגדרות נשמרו בהצלחה',
+            'search'                       => 'לחפש',
             'title'                        => 'הגדרות',
 
             'general' => [
@@ -3630,6 +3639,12 @@ return [
             ],
 
             'toolbar' => [
+                'length-of' => ':length של',
+                'of'        => 'של',
+                'per-page'  => 'לעמוד',
+                'results'   => ':total תוצאות',
+                'selected'  => ':total נבחרו',
+
                 'mass-actions' => [
                     'select-action' => 'בחר פעולה',
                     'select-option' => 'בחר אפשרות',
@@ -3869,11 +3884,12 @@ return [
     ],
 
     'export' => [
-        'csv'              => 'CSV',
-        'download'         => 'הורדה',
-        'export'           => 'ייצוא',
-        'no-records'       => 'אין מידע לייצוא',
-        'xls'              => 'XLS',
+        'csv'        => 'CSV',
+        'download'   => 'הורדה',
+        'export'     => 'ייצוא',
+        'no-records' => 'אין מידע לייצוא',
+        'xls'        => 'XLS',
+        'xlsx'       => 'XLSX',
     ],
 
     'validations' => [

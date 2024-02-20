@@ -8,7 +8,7 @@
     $showWishlist = (bool) core()->getConfigData('general.content.shop.wishlist_option');
 @endphp
 
-<div class="gap-4 flex-wrap px-4 pt-6 hidden max-lg:flex max-lg:mb-4">
+<div class="gap-4 flex-wrap px-4 pb-4 pt-6 hidden shadow-sm max-lg:flex">
     <div class="w-full flex justify-between items-center">
         <!-- Left Navigation -->
         <div class="flex items-center gap-x-1.5">
@@ -26,7 +26,7 @@
                     <div class="flex justify-between items-center">
                         <a href="{{ route('shop.home.index') }}">
                             <img
-                                src="{{ bagisto_asset('images/logo.svg') }}"
+                                src="{{ core()->getCurrentChannel()->logo_url ?? bagisto_asset('images/logo.svg') }}"
                                 alt="{{ config('app.name') }}"
                                 width="131"
                                 height="29"

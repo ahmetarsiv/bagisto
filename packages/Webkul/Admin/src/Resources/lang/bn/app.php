@@ -351,6 +351,7 @@ return [
                 'adjustment-refund'           => 'সমন্বয় ফেরত',
                 'amount-per-unit'             => ':amount প্রতি ইউনিট x :qty পরিমাণ',
                 'create-success'              => 'ফেরত সফলভাবে তৈরি হয়েছে',
+                'creation-error'              => 'রিফান্ড তৈরি করা অনুমোদিত নয়।',
                 'discount-amount'             => 'ডিসকাউন্ট পরিমাণ',
                 'grand-total'                 => 'মোট টোটাল',
                 'invalid-qty'                 => 'আমরা অবৈধ পরিমাণ চেনে পেয়েছি।',
@@ -423,18 +424,19 @@ return [
                 'title'                  => 'চালান #:invoice_id',
             ],
 
-            'create' => [
-                'amount-per-unit' => ':amount প্রতি একক x :qty পরিমাণ',
-                'create-invoice'  => 'চালান তৈরি করুন',
-                'create-success'  => 'চালান সফলভাবে তৈরি হয়েছে',
-                'creation-error'  => 'অর্ডার চালান তৈরি করা যাবে না।',
-                'invalid-qty'     => 'আমরা অবৈধ পরিমাণ চালান আইটেম পেয়েছি।',
-                'invoice'         => 'চালান',
-                'new-invoice'     => 'নতুন চালান',
-                'product-error'   => 'পণ্য ছাড়া চালান তৈরি করা যাবে না।',
-                'product-image'   => 'পণ্যের চিত্র',
-                'qty-to-invoiced' => 'চালান করার পরিমাণ',
-                'sku'             => 'SKU - :sku',
+            'create'   => [
+                'amount-per-unit'    => ':amount প্রতি একক × :qty পরিমাণ',
+                'create-invoice'     => 'চালান তৈরি করুন',
+                'create-success'     => 'চালান সফলভাবে তৈরি হয়েছে',
+                'create-transaction' => 'লেনদেন তৈরি করুন',
+                'creation-error'     => 'অর্ডার চালান তৈরি করা অনুমোদিত নয়।',
+                'invalid-qty'        => 'আমরা অকার্যকর পরিমাণ পাওয়া গেছে আইটেম চালানের জন্য।',
+                'invoice'            => 'চালান',
+                'new-invoice'        => 'নতুন চালান',
+                'product-error'      => 'পণ্য ছাড়া চালান তৈরি করা যাবে না।',
+                'product-image'      => 'পণ্যের চিত্র',
+                'qty-to-invoiced'    => 'চালানে পরিমাণ',
+                'sku'                => 'এসকেও - :sku',
             ],
 
             'invoice-pdf' => [
@@ -489,10 +491,15 @@ return [
 
                 'create' => [
                     'already-paid'               => 'ইতিমধ্যে পেইড',
+                    'amount'                     => 'মোট পরিমাণ',
+                    'create-transaction'         => 'লেনদেন তৈরি করুন',
+                    'invoice-id'                 => 'চালান আইডি',
                     'invoice-missing'            => 'চালান অনুপস্থিত',
+                    'payment-method'             => 'পরিশোধের পদ্ধতি',
+                    'save-transaction'           => 'লেনদেন সংরক্ষণ করুন',
                     'transaction-amount-exceeds' => 'লেনদেন পরিমাণ অধিক',
                     'transaction-amount-zero'    => 'লেনদেন পরিমাণ শূন্য',
-                    'transaction-saved'          => 'লেনদেন সফলভাবে সংরক্ষিত',
+                    'transaction-saved'          => 'লেনদেন সফলভাবে সংরক্ষিত হয়েছে।',
                 ],
 
                 'view' => [
@@ -2255,8 +2262,8 @@ return [
                     'delete'              => 'মুছুন',
                     'download-sample'     => 'নমুনা ডাউনলোড করুন',
                     'field-separator'     => 'ক্ষেত্র পৃথককরণকারী',
-                    'file-info-example'   => 'উদাহরণস্বরূপ, পণ্য চিত্রে, ফাইলগুলি অবস্থান করতে হবে /প্রকল্প-রুট/স্টোরেজ/ইম্পোর্ট/অ্যাপ/পণ্য-চিত্রগুলি ফোল্ডারে।',
-                    'file-info'           => 'ব্যবহার করুন /প্রকল্প-রুট/স্টোরেজ/ইম্পোর্ট/অ্যাপ এর সাথে সম্পর্কিত পথ, উদাহরণস্বরূপ, পণ্য-চিত্র, ইম্পোর্ট-ইমেজ।',
+                    'file-info-example'   => 'উদাহরণস্বরূপ, পণ্য চিত্রে, ফাইলগুলি অবস্থান করতে হবে /project-root/storage/app/import/product-images',
+                    'file-info'           => 'ব্যবহার করুন /project-root/storage/app/import এর সাথে সম্পর্কিত পথ, উদাহরণস্বরূপ, পণ্য-চিত্র, ইম্পোর্ট-ইমেজ।',
                     'file'                => 'ফাইল',
                     'general'             => 'সাধারিত',
                     'images-directory'    => 'চিত্র ডিরেক্টরি পথ',
@@ -2279,8 +2286,8 @@ return [
                     'delete'              => 'মুছুন',
                     'download-sample'     => 'নমুনা ডাউনলোড করুন',
                     'field-separator'     => 'ক্ষেত্র পৃথককরণকারী',
-                    'file-info-example'   => 'উদাহরণস্বরূপ, পণ্য চিত্রে, ফাইলগুলি অবস্থান করতে হবে /প্রকল্প-রুট/স্টোরেজ/ইম্পোর্ট/অ্যাপ/পণ্য-চিত্রগুলি ফোল্ডারে।',
-                    'file-info'           => 'ব্যবহার করুন /প্রকল্প-রুট/স্টোরেজ/ইম্পোর্ট/অ্যাপ এর সাথে সম্পর্কিত পথ, উদাহরণস্বরূপ, পণ্য-চিত্র, ইম্পোর্ট-ইমেজ।',
+                    'file-info-example'   => 'উদাহরণস্বরূপ, পণ্য চিত্রে, ফাইলগুলি অবস্থান করতে হবে /project-root/storage/app/import/product-images',
+                    'file-info'           => 'ব্যবহার করুন /project-root/storage/app/import এর সাথে সম্পর্কিত পথ, উদাহরণস্বরূপ, পণ্য-চিত্র, ইম্পোর্ট-ইমেজ।',
                     'file'                => 'ফাইল',
                     'general'             => 'সাধারিত',
                     'images-directory'    => 'চিত্র ডিরেক্টরি পথ',
@@ -2801,7 +2808,7 @@ return [
                 'type' => [
                     'category-carousel' => 'বিভাগ ক্যারোসেল',
                     'footer-links'      => 'ফুটার লিংক',
-                    'image-carousel'    => 'স্লাইডার ক্যারোসেল',
+                    'image-carousel'    => 'চিত্র ক্যারাসেল',
                     'product-carousel'  => 'পণ্য ক্যারোসেল',
                     'services-content'  => 'পরিষেবা সামগ্রী',
                     'static-content'    => 'স্থির কন্টেন্ট',
@@ -3017,8 +3024,10 @@ return [
             'delete'                       => 'মুছে ফেলুন',
             'enable-at-least-one-payment'  => 'অন্তত একটি পেমেন্ট মেথড সক্রিয় করুন।',
             'enable-at-least-one-shipping' => 'অন্তত একটি শিপিং মেথড সক্রিয় করুন।',
+            'no-result-found'              => 'কোন ফলাফল পাওয়া যায়নি',
             'save-btn'                     => 'কনফিগারেশন সংরক্ষণ করুন',
             'save-message'                 => 'কনফিগারেশনটি সফলভাবে সংরক্ষিত হয়েছে',
+            'search'                       => 'অনুসন্ধান করুন',
             'title'                        => 'কনফিগারেশন',
 
             'general' => [
@@ -3630,6 +3639,12 @@ return [
             ],
 
             'toolbar' => [
+                'length-of' => ':length এর',
+                'of'        => 'এর',
+                'per-page'  => 'প্রতি পৃষ্ঠা',
+                'results'   => ':total ফলাফল',
+                'selected'  => ':total নির্বাচিত',
+
                 'mass-actions' => [
                     'submit'        => 'জমা দিন',
                     'select-option' => 'বিকল্প নির্ধারণ করুন',
@@ -3874,6 +3889,7 @@ return [
         'export'           => 'পর্যাপন্ন করুন',
         'no-records'       => 'পর্যাপন্ন কিছু নেই',
         'xls'              => 'XLS',
+        'xlsx'             => 'এক্সএলএসএক্স',
     ],
 
     'validations' => [
