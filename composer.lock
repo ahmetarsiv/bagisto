@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dee781f724d2a6a876d8a2322b32a2ed",
+    "content-hash": "83810cab15dbed1144d852c1d19bdc2c",
     "packages": [
         {
             "name": "astrotomic/laravel-translatable",
@@ -304,6 +304,78 @@
                 }
             ],
             "time": "2023-12-11T17:09:12+00:00"
+        },
+        {
+            "name": "codenteq/iyzico-payment-gateway",
+            "version": "v1.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codenteq/iyzico-payment-gateway.git",
+                "reference": "8c3965f3f03d67a35dbbeae2e54a3a80bcca5a92"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codenteq/iyzico-payment-gateway/zipball/8c3965f3f03d67a35dbbeae2e54a3a80bcca5a92",
+                "reference": "8c3965f3f03d67a35dbbeae2e54a3a80bcca5a92",
+                "shasum": ""
+            },
+            "require": {
+                "iyzico/iyzipay-php": "^2.0"
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "aliases": [],
+                    "providers": [
+                        "Webkul\\Iyzico\\Providers\\IyzicoServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webkul\\Iyzico\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ahmet Sefa Arşiv",
+                    "email": "ahmetarsivpm@gmail.com",
+                    "homepage": "https://github.com/ahmetarsiv",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Ali Karabay",
+                    "email": "alikarabay77@gmail.com",
+                    "homepage": "https://github.com/karabayyazilim",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The Laravel eCommerce Iyzico Payment Gateway",
+            "homepage": "https://codenteq.com",
+            "keywords": [
+                "bagisto",
+                "codenteq",
+                "ecommerce",
+                "iyzico",
+                "opensource",
+                "payment"
+            ],
+            "support": {
+                "email": "info@codenteq.com",
+                "issues": "https://github.com/codenteq/iyzico-payment-gateway/issues",
+                "source": "https://github.com/codenteq/iyzico-payment-gateway"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/codenteq",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-06-24T15:03:08+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -2344,6 +2416,62 @@
             ],
             "abandoned": true,
             "time": "2023-02-25T19:40:47+00:00"
+        },
+        {
+            "name": "iyzico/iyzipay-php",
+            "version": "v2.0.58",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/iyzico/iyzipay-php.git",
+                "reference": "61089e8deb03977af3a1ff396b73dc01ad12fdb0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/iyzico/iyzipay-php/zipball/61089e8deb03977af3a1ff396b73dc01ad12fdb0",
+                "reference": "61089e8deb03977af3a1ff396b73dc01ad12fdb0",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=7.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~9.6",
+                "satooshi/php-coveralls": "~0.6.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Iyzipay\\": "src/Iyzipay/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "iyzico and contributors",
+                    "homepage": "https://github.com/iyzico/iyzipay-php/contributors"
+                }
+            ],
+            "description": "iyzipay api php client",
+            "homepage": "https://www.iyzico.com",
+            "keywords": [
+                "iyzico",
+                "iyzico.com",
+                "iyzipay",
+                "iyzipay api",
+                "iyzipay api php",
+                "iyzipay api php client",
+                "iyzipay php",
+                "payment processing"
+            ],
+            "support": {
+                "issues": "https://github.com/iyzico/iyzipay-php/issues",
+                "source": "https://github.com/iyzico/iyzipay-php/tree/v2.0.58"
+            },
+            "time": "2024-12-26T12:49:12+00:00"
         },
         {
             "name": "jaybizzle/crawler-detect",
@@ -14174,7 +14302,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
@@ -14188,6 +14316,6 @@
         "ext-pdo_mysql": "*",
         "ext-tokenizer": "*"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }

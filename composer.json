@@ -19,6 +19,7 @@
         "ext-tokenizer": "*",
         "astrotomic/laravel-translatable": "^11.0.0",
         "barryvdh/laravel-dompdf": "^2.0.0",
+        "codenteq/iyzico-payment-gateway": "^1.5",
         "diglactic/laravel-breadcrumbs": "^8.0",
         "doctrine/dbal": "^3.0",
         "elasticsearch/elasticsearch": "^8.10",
