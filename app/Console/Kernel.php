@@ -28,6 +28,10 @@ class Kernel extends ConsoleKernel
         $schedule->command('indexer:index --type=price')->dailyAt('00:01');
 
         $schedule->command('product:price-rule:index')->dailyAt('00:01');
+
+        $schedule->command('backup:clean')->daily()->at('01:00');
+
+        $schedule->command('backup:run')->daily()->at('01:30');
     }
 
     /**
