@@ -12,6 +12,7 @@ class VatValidator
      * @link http://ec.europa.eu/taxation_customs/vies/faq.html?locale=en#item_11
      */
     protected static $pattern_expression = [
+        'TR' => '\d{10,11}',
         'AT' => 'U[A-Z\d]{8}',
         'AE' => '\d{15}',
         'BE' => '(0\d{9}|\d{10})',
