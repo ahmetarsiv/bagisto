@@ -71,6 +71,10 @@ class VatValidator
 
     private function splitVat(string $vatNumber): array
     {
+        if (preg_match('/^\d{10,11}$/', $vatNumber)) {
+            return ['TR', $vatNumber];
+        }
+
         return [
             substr($vatNumber, 0, 2),
             substr($vatNumber, 2),
