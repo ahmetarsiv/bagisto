@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f87198f852eef1041ae9a307b44621a6",
+    "content-hash": "508048a774e88636d68798bd1f524dba",
     "packages": [
         {
             "name": "astrotomic/laravel-translatable",
@@ -307,16 +307,16 @@
         },
         {
             "name": "codenteq/iyzico-payment-gateway",
-            "version": "v1.5.1",
+            "version": "v1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codenteq/iyzico-payment-gateway.git",
-                "reference": "8c3965f3f03d67a35dbbeae2e54a3a80bcca5a92"
+                "reference": "6b6994ff1d8d49c5f8bc71514c26ac0aa2412272"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codenteq/iyzico-payment-gateway/zipball/8c3965f3f03d67a35dbbeae2e54a3a80bcca5a92",
-                "reference": "8c3965f3f03d67a35dbbeae2e54a3a80bcca5a92",
+                "url": "https://api.github.com/repos/codenteq/iyzico-payment-gateway/zipball/6b6994ff1d8d49c5f8bc71514c26ac0aa2412272",
+                "reference": "6b6994ff1d8d49c5f8bc71514c26ac0aa2412272",
                 "shasum": ""
             },
             "require": {
@@ -375,7 +375,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-06-24T15:03:08+00:00"
+            "time": "2025-02-17T17:18:27+00:00"
         },
         {
             "name": "composer/ca-bundle",
